@@ -7,11 +7,14 @@
     %tr
       %th Name
       %th City
-      %th{:colspan => "2"}
+      %th Checkpoints
+      %th{:colspan => "3"}
   %tbody
     - @tracks.each do |track|
       %tr
         %td= track.name
         %td= track.city
+        %td= track.check_points_count
+        %td.action= link_to 'Checkpoints', track_check_points_path(track.id)
         %td.action= link_to 'Edit', edit_track_path(track)
         %td.action.warning= link_to 'Delete', track, method: :delete, data: { confirm: 'Are you sure?' }

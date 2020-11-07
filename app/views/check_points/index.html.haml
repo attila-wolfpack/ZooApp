@@ -1,0 +1,17 @@
+%p#notice= notice
+%h1.float-left= "Checkpoints of #{@track.name}"
+.float-right= button_to 'Add new checkpoint', new_track_check_point_path(@track.id), class: 'btn btn-primary', method: :get
+%br
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Track
+      %th{:colspan => "2"}
+  %tbody
+    - @check_points.each do |check_point|
+      %tr
+        %td= check_point.name
+        %td= check_point.track.name
+        %td.action= link_to 'Edit', edit_track_check_point_path(@track, check_point)
+        %td.action.warning= link_to 'Delete', track_check_point_path(@track, check_point), method: :delete, data: { confirm: 'Are you sure?' }

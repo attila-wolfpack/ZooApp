@@ -8,5 +8,8 @@ Rails.application.routes.draw do
       get :approve
     end
   end
-  resources :tracks, except: :show
+
+  resources :tracks, except: :show do
+    resources :check_points
+  end
 end
