@@ -5,15 +5,19 @@
     = f.text_field :body, autofocus: true, class: 'form-control'
   .form-group
     = f.label :correct_answer
+    %p.error= question.errors.full_messages_for(:correct_answer).first
     = f.text_field :correct_answer, class: 'form-control'
   .form-group
     = f.label :answer_1
+    %p.error= question.errors.full_messages_for(:answer1).first
     = f.text_field :answer1, class: 'form-control'
   .form-group
     = f.label :answer_2
+    %p.error= question.errors.full_messages_for(:answer2).first
     = f.text_field :answer2, class: 'form-control'
   .form-group
     = f.label :answer_3
+    %p.error= question.errors.full_messages_for(:answer3).first
     = f.text_field :answer3, class: 'form-control'
   .form-group.mt-4
     = link_to 'Cancel', animal_questions_path, class: 'btn btn-secondary float-left'
