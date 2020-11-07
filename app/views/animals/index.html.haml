@@ -9,6 +9,7 @@
       %th Name
       %th Questions
       %th 3D model
+      %th Texture
       %th Description
       %th Donate URL
       %th{:colspan => "3"}
@@ -18,6 +19,7 @@
         %td= animal.name
         %td= animal.questions.count
         %td= animal.model.present? ? animal.model.blob.filename : ''
+        %td= animal.texture.present? ? animal.texture.blob.filename : ''
         %td= animal.description&.truncate(30)
         %td= animal.donate_url
         %td.action= link_to 'Questions', animal_questions_path(animal.id)
