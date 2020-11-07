@@ -42,6 +42,6 @@ class TracksController < ApplicationController
     end
 
     def track_params
-      params.require(:track).permit(:name, :city)
+      params.require(:track).permit(:name, :city, :photo, :description)
     end
 end

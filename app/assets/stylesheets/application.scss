@@ -139,6 +139,13 @@ body {
         height: 40px;
       }
 
+      textarea {
+        background-color: #FFFFFF;
+        border: 1px solid #F0F0F0;
+        border-radius: 14px;
+        height: 120px;
+      }
+
       .btn {
         width: 216px;
       }
@@ -195,6 +202,10 @@ body {
         &.action {
           width: 80px;
         }
+      }
+
+      .photo-preview {
+        max-width: 150px;
       }
     }
 

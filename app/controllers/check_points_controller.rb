@@ -47,6 +47,6 @@ class CheckPointsController < ApplicationController
     end
 
     def check_point_params
-      params.require(:check_point).permit(:name, :lat, :lng, :animal_id)
+      params.require(:check_point).permit(:name, :lat, :lng, :animal_id, :description)
     end
 end

@@ -7,6 +7,17 @@
     = f.label :city
     %p.error= track.errors.full_messages_for(:city).first
     = f.text_field :city, autofocus: true, class: 'form-control'
+  .form-group
+    = f.label :description
+    %p.error= track.errors.full_messages_for(:description).first
+    = f.text_area :description, autofocus: true, class: 'form-control'
+  .form-group
+    = f.label 'Photo'
+    %p.error= track.errors.full_messages_for(:photo).first
+    %br
+    %label.custom-file-upload{:for => "file-upload"}
+      .btn.btn-primary Upload file
+    = f.file_field :photo, class: 'form-control-file', id: 'file-upload'
   .form-group.mt-4
     = link_to 'Cancel', tracks_path, class: 'btn btn-secondary float-left'
     = f.submit "#{track.id.present? ? 'Update' : 'Add'}", class: 'btn btn-primary float-right'

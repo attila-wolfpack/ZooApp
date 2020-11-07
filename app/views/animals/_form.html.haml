@@ -10,7 +10,10 @@
     %label.custom-file-upload{:for => "file-upload"}
       .btn.btn-primary Upload file
     = f.file_field :model, class: 'form-control-file', id: 'file-upload'
-
+  .form-group
+    = f.label :description
+    %p.error= animal.errors.full_messages_for(:description).first
+    = f.text_area :description, autofocus: true, class: 'form-control'
   .form-group.mt-4
     = link_to 'Cancel', animals_path, class: 'btn btn-secondary float-left'
     = f.submit "#{animal.id.present? ? 'Update' : 'Add'}", class: 'btn btn-primary float-right'
