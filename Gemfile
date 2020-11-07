@@ -30,7 +30,8 @@ gem 'devise'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'firebase'
-gem "google-cloud-storage", "~> 1.8", require: false
+gem 'google-cloud-storage', '~> 1.8', require: false
+gem 'active_model_serializers'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

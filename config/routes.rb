@@ -16,4 +16,10 @@ Rails.application.routes.draw do
   resources :animals, except: :show do
     resources :questions, except: :show
   end
+
+  namespace :api do
+    resources :tracks, only: :index do
+      resources :check_points, only: :index
+    end
+  end
 end

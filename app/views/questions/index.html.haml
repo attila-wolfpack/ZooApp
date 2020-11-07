@@ -1,5 +1,5 @@
 %p#notice= notice
-%h1.float-left= "Questions of #{@animal.name}"
+%h1.float-left= "Questions (animal: #{@animal.name})"
 .float-right= button_to 'Add new question', new_animal_question_path(@animal.id), class: 'btn btn-primary', method: :get
 .clearfix
 %br
