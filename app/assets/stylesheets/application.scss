@@ -78,6 +78,16 @@ body {
       line-height: 25px;
     }
 
+    .error {
+      margin-bottom: 0px;
+      font-size: 14px;
+      color: red;
+
+      &:empty {
+        display: none;
+      }
+    }
+
     #error_explanation {
       h2 {
         font-size: 14px;
