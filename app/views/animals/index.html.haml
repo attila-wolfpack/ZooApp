@@ -1,0 +1,15 @@
+%p#notice= notice
+%h1.float-left Animal
+.float-right= button_to 'Add new animal', new_animal_path, class: 'btn btn-primary', method: :get
+%br
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th{:colspan => "2"}
+  %tbody
+    - @animals.each do |animal|
+      %tr
+        %td= animal.name
+        %td.action= link_to 'Edit', edit_animal_path(animal)
+        %td.action.warning= link_to 'Delete', animal, method: :delete, data: { confirm: 'Are you sure?' }

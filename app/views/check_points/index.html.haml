@@ -7,11 +7,13 @@
     %tr
       %th Name
       %th Track
+      %th Animal
       %th{:colspan => "2"}
   %tbody
     - @check_points.each do |check_point|
       %tr
         %td= check_point.name
-        %td= check_point.track.name
+        %td= check_point.track&.name
+        %td= check_point.animal&.name
         %td.action= link_to 'Edit', edit_track_check_point_path(@track, check_point)
         %td.action.warning= link_to 'Delete', track_check_point_path(@track, check_point), method: :delete, data: { confirm: 'Are you sure?' }

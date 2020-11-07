@@ -1,4 +1,3 @@
-%p= check_point.errors.full_messages
 = form_with(model: check_point, url: [@track, check_point], local: true) do |f|
   .form-group
     = f.label :name
@@ -7,11 +6,15 @@
   .form-group
     = f.label :lat
     %p.error= check_point.errors.full_messages_for(:lat).first
-    = f.text_field :lat, autofocus: true, class: 'form-control'
+    = f.text_field :lat, class: 'form-control'
   .form-group
     = f.label :lng
     %p.error= check_point.errors.full_messages_for(:lng).first
-    = f.text_field :lng, autofocus: true, class: 'form-control'
+    = f.text_field :lng, class: 'form-control'
+  .form-group
+    = f.label :animal
+    %p.error= check_point.errors.full_messages_for(:animal).first
+    = f.select :animal_id, Animal.order(:name).map { |animal| [animal.name, animal.id] }, { include_blank: true }, class: 'form-control'
   .form-group.mt-4
     = link_to 'Cancel', track_check_points_path, class: 'btn btn-secondary float-left'
     = f.submit "#{check_point.id.present? ? 'Update' : 'Add'}", class: 'btn btn-primary float-right'
