@@ -29,6 +29,8 @@ gem 'haml'
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'firebase'
+gem "google-cloud-storage", "~> 1.8", require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
