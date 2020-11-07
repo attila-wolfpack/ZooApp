@@ -1,12 +1,13 @@
 %p#notice= notice
 %h1.float-left= "Questions of #{@animal.name}"
 .float-right= button_to 'Add new question', new_animal_question_path(@animal.id), class: 'btn btn-primary', method: :get
+.clearfix
 %br
 %table.table
   %thead
     %tr
       %th Body
-      %th Correct answer
+      %th Answers
       %th{:colspan => "2"}
   %tbody
     - @questions.each do |question|
