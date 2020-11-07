@@ -1,3 +1,3 @@
 class Api::AnimalSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description
+  attributes :id, :name, :description, :donate_url
 end

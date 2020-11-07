@@ -14,6 +14,10 @@
     = f.label :description
     %p.error= animal.errors.full_messages_for(:description).first
     = f.text_area :description, autofocus: true, class: 'form-control'
+  .form-group
+    = f.label :donate_url
+    %p.error= animal.errors.full_messages_for(:donate_url).first
+    = f.text_field :donate_url, autofocus: true, class: 'form-control'
   .form-group.mt-4
     = link_to 'Cancel', animals_path, class: 'btn btn-secondary float-left'
     = f.submit "#{animal.id.present? ? 'Update' : 'Add'}", class: 'btn btn-primary float-right'
