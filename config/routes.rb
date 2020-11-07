@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: 'pages#home'
+  root to: 'users#index'
 
   resources :users, only: %i[index destroy] do
     member do

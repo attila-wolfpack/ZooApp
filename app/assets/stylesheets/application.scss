@@ -20,6 +20,121 @@ body {
   font-family: GillSans;
 }
 
+.main-container {
+  .navbar {
+    height: 87px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    box-shadow: 5px 2px 82px 0 #DFE9F3;
+    background-color: white;
+
+    .email-address {
+      font-size: 16px;
+      line-height: 19px;
+      margin-left:auto;
+      margin-right: 10px; 
+    }
+
+    .logout {
+      margin-right: 40px;
+    }
+
+    .btn-logout {
+      background-color: #FFFFFF;
+      color: #000000;
+      border-color: #000000;
+      border-radius: 4px;
+      width: 100px;
+      height: 40px;
+    }
+
+    form {
+      margin-bottom: 0;
+    }
+  }
+
+  .content {
+    margin-top: 87px;
+  }
+
+  .sidebar {
+    height: 100%;
+    width: 158px;
+    position: fixed;
+    top: 87px;
+    left: 0;
+    overflow-x: hidden;
+
+    a {
+      padding: 20px 8px 20px 8px;
+      text-decoration: none;
+      display: block;
+
+      color: #ADADAD;
+      font-family: GillSans;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+    }
+  }
+
+  .main-content {
+    margin-left: 158px;
+    background-color: #F0F0F0;
+    min-height: calc(100% - 87px);
+
+    h1 {
+      color: #000000;
+      font-size: 35px;
+      font-weight: bold;
+      line-height: 42px;
+      text-align: left;
+    }
+
+    .table {
+      background-color: #FFFFFF;
+      border-radius: 14px;
+      box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.02);
+      width: 100%;
+      font-size: 14px;
+      padding: 40px;
+
+      th:first-child, td:first-child {
+        padding-left: 40px;
+      }
+
+      th:last-child, td:last-child {
+        padding-right: 40px;
+      }
+
+      th {
+        border-top: none;
+        border-bottom: 1px;
+
+        padding: 20px;
+      }
+
+      td {
+        padding: 15px 20px;
+
+        &.action {
+          width: 80px;
+          a {
+            color: #000000;
+          }
+
+          &.warning a {
+            color: #E62828;
+          }
+        }
+      }
+    }
+  }
+}
+
 .devise {
   background-color: #EABD2C;
 
@@ -64,7 +179,7 @@ body {
       width: calc(100% - 20px);
       height: 40px;
       margin-left: 10px;
-      margin-right: 10px; 
+      margin-right: 10px;
     }
 
     .actions {
