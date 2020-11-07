@@ -2,7 +2,7 @@ class Api::CheckPointsController < Api::ApiController
   before_action :set_track, only: :index
 
   def index
-    @quizzes = @track.check_points.map do |check_point|
+    @quizzes = @track.check_points.ordered_by_position_asc.map do |check_point|
       Quiz.new(
         check_point: check_point,
         animal: check_point.animal,

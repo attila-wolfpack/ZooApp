@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   end
 
   resources :tracks, except: :show do
-    resources :check_points, except: :show
+    resources :check_points, except: :show do
+      member do
+        post :move
+      end
+    end
   end
 
   resources :animals, except: :show do

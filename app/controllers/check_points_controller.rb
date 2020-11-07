@@ -1,9 +1,9 @@
 class CheckPointsController < ApplicationController
-  before_action :set_check_point, only: [:edit, :update, :destroy]
+  before_action :set_check_point, only: [:edit, :update, :destroy, :move]
   before_action :set_track
 
   def index
-    @check_points = @track.check_points
+    @check_points = @track.check_points.ordered_by_position_asc
   end
 
   def new
@@ -35,6 +35,10 @@ class CheckPointsController < ApplicationController
     @check_point.destroy
     
     redirect_to track_check_points_url(@track), notice: 'Checkpoint was successfully destroyed.'
+  end
+
+  def move
+    @check_point.move_to! params[:position]
   end
 
   private

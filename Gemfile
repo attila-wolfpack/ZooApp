@@ -32,6 +32,8 @@ gem 'jquery-rails'
 gem 'firebase'
 gem 'google-cloud-storage', '~> 1.8', require: false
 gem 'active_model_serializers'
+gem 'activerecord-sortable'
+gem 'jquery-ui-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
