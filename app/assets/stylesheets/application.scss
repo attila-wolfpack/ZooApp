@@ -38,7 +38,7 @@ body {
     }
 
     .logout {
-      margin-right: 40px;
+      margin-right: 8px;
     }
 
     .btn-logout {
@@ -94,6 +94,66 @@ body {
       text-align: left;
     }
 
+    .btn {
+      font-size: 14px;
+      line-height: 26px;
+      border-radius: 4px;
+      height: 40px;
+      width: 250px;
+    }
+
+    .btn-primary {
+      background-color: #000000;
+      border: none;
+      color: #FFFFFF;
+    }
+
+    .btn-secondary {
+      background-color: #FFFFFF;
+      color: #000000;
+      border: 1px solid #F0F0F0;
+    }
+
+    .form-container {
+      width: 524px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.02);
+      padding: 14px 24px 0px 24px;
+
+      h1 {
+        font-size: 25px;
+        line-height: 30px;
+      }
+
+      label {
+        color: #393939;
+        font-size: 14px;
+      }
+
+      input[type=text] {
+        background-color: #FFFFFF;
+        border: 1px solid #F0F0F0;
+        border-radius: 14px;
+        height: 40px;
+      }
+
+      .btn {
+        width: 216px;
+      }
+    }
+
+    .error {
+      margin-bottom: 0px;
+      font-size: 14px;
+      color: red;
+
+      &:empty {
+        display: none;
+      }
+    }
+
     .table {
       background-color: #FFFFFF;
       border-radius: 14px;
@@ -117,18 +177,19 @@ body {
         padding: 20px;
       }
 
+      td a {
+        color: #000000;
+      }
+
+      td.warning a {
+        color: #E62828;
+      }
+
       td {
         padding: 15px 20px;
 
         &.action {
           width: 80px;
-          a {
-            color: #000000;
-          }
-
-          &.warning a {
-            color: #E62828;
-          }
         }
       }
     }

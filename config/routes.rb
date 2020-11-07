@@ -8,4 +8,5 @@ Rails.application.routes.draw do
       get :approve
     end
   end
+  resources :tracks, except: :show
 end

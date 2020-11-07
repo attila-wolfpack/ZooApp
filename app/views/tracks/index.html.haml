@@ -1,0 +1,17 @@
+%p#notice= notice
+%h1.float-left Tours
+.float-right= button_to 'Add new tour', new_track_path, class: 'btn btn-primary', method: :get
+%br
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th City
+      %th{:colspan => "2"}
+  %tbody
+    - @tracks.each do |track|
+      %tr
+        %td= track.name
+        %td= track.city
+        %td.action= link_to 'Edit', edit_track_path(track)
+        %td.action.warning= link_to 'Delete', track, method: :delete, data: { confirm: 'Are you sure?' }

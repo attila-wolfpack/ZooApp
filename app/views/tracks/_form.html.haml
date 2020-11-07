@@ -1,0 +1,13 @@
+= form_with(model: track, local: true) do |f|
+  .form-group
+    = f.label :name
+    %p.error= track.errors.full_messages_for(:name).first
+    = f.text_field :name, autofocus: true, class: 'form-control'
+  .form-group
+    = f.label :city
+    %p.error= track.errors.full_messages_for(:city).first
+    = f.text_field :city, autofocus: true, class: 'form-control'
+  .form-group.mt-4
+    = link_to 'Cancel', tracks_path, class: 'btn btn-secondary float-left'
+    = f.submit "#{track.id.present? ? 'Update' : 'Add'}", class: 'btn btn-primary float-right'
+    .clearfix
