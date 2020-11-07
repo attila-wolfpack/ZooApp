@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def approve
-    @user.update(approved: true)
+    @user.update!(approved: true)
 
     redirect_to users_path
   end
