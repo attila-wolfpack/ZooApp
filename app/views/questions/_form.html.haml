@@ -1,0 +1,21 @@
+= form_with(model: question, url: [@animal, question], local: true) do |f|
+  .form-group
+    = f.label :body
+    %p.error= question.errors.full_messages_for(:body).first
+    = f.text_field :body, autofocus: true, class: 'form-control'
+  .form-group
+    = f.label :correct_answer
+    = f.text_field :correct_answer, class: 'form-control'
+  .form-group
+    = f.label :answer_1
+    = f.text_field :answer1, class: 'form-control'
+  .form-group
+    = f.label :answer_2
+    = f.text_field :answer2, class: 'form-control'
+  .form-group
+    = f.label :answer_3
+    = f.text_field :answer3, class: 'form-control'
+  .form-group.mt-4
+    = link_to 'Cancel', animal_questions_path, class: 'btn btn-secondary float-left'
+    = f.submit "#{question.id.present? ? 'Update' : 'Add'}", class: 'btn btn-primary float-right'
+    .clearfix

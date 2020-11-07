@@ -1,0 +1,21 @@
+%p#notice= notice
+%h1.float-left= "Questions of #{@animal.name}"
+.float-right= button_to 'Add new question', new_animal_question_path(@animal.id), class: 'btn btn-primary', method: :get
+%br
+%table.table
+  %thead
+    %tr
+      %th Body
+      %th Correct answer
+      %th{:colspan => "2"}
+  %tbody
+    - @questions.each do |question|
+      %tr
+        %td= question.body
+        %td
+          %p.correct-answer.mb-1= question.correct_answer
+          %p.wrong-answer.mb-1= question.answer1
+          %p.wrong-answer.mb-1= question.answer2
+          %p.wrong-answer.mb-0= question.answer3
+        %td.action= link_to 'Edit', edit_animal_question_path(@animal, question)
+        %td.action.warning= link_to 'Delete', animal_question_path(@animal, question), method: :delete, data: { confirm: 'Are you sure?' }

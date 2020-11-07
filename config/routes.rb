@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: 'users#index'
+  root to: 'tracks#index'
 
   resources :users, only: %i[index destroy] do
     member do
@@ -13,5 +13,7 @@ Rails.application.routes.draw do
     resources :check_points, except: :show
   end
 
-  resources :animals, except: :show
+  resources :animals, except: :show do
+    resources :questions, except: :show
+  end
 end
