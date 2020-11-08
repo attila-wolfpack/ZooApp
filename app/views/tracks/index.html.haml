@@ -3,26 +3,27 @@
 .float-right= button_to 'Add new tour', new_track_path, class: 'btn btn-primary', method: :get
 .clearfix
 %br
-%table.table
-  %thead
-    %tr
-      %th Name
-      %th City
-      %th Checkpoints
-      %th Description
-      %th Photo
-      %th{:colspan => "3"}
-  %tbody
-    - @tracks.each do |track|
+.table-responsive
+  %table.table
+    %thead
       %tr
-        %td= track.name
-        %td= track.city
-        %td= track.check_points_count
-        %td= track.description&.truncate(30)
-        %td= track.photo.present? ? track.photo.blob.filename : ''
-        / %td
-        /   - if track.photo.present?
-        /     = image_tag track.photo, class: 'photo-preview'
-        %td.action= link_to 'Checkpoints', track_check_points_path(track.id)
-        %td.action= link_to 'Edit', edit_track_path(track)
-        %td.action.warning= link_to 'Delete', track, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Name
+        %th City
+        %th Checkpoints
+        %th Description
+        %th Photo
+        %th{:colspan => "3"}
+    %tbody
+      - @tracks.each do |track|
+        %tr
+          %td= track.name
+          %td= track.city
+          %td= track.check_points_count
+          %td= track.description&.truncate(30)
+          %td= track.photo.present? ? track.photo.blob.filename : ''
+          / %td
+          /   - if track.photo.present?
+          /     = image_tag track.photo, class: 'photo-preview'
+          %td.action= link_to 'Checkpoints', track_check_points_path(track.id)
+          %td.action= link_to 'Edit', edit_track_path(track)
+          %td.action.warning= link_to 'Delete', track, method: :delete, data: { confirm: 'Are you sure?' }
